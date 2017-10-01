@@ -1,3 +1,41 @@
-page-home {
+.circle {
+	border:4px solid white;
+	border-radius: 50%;
+	width: 75%;
+	height: 75%;
+	text-align: center;
+	margin: auto;
+}
 
+.homepage {
+	background-image: url('../../assets/images/homebackground.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.circle h1 {
+		position:absolute; 
+	  margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    font-size: 50px;
+}
+
+.weather-list {
+	padding-top: 20px;
+}
+
+.weather-item {
+	border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    background-color: #9ca9c4;
+    color: white;
 }
