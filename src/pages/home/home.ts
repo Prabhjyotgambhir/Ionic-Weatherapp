@@ -21,9 +21,9 @@ export class HomePage {
 
   	this.storage.get('location').then((val)=>{
   		if(val!=null) {
-
+  			this.location = JSON.parse(val);
   		} else {
-  			this.location = {
+  		this.location = {
   		city: 'Ghaziabad',
   		state: 'India'
   			}

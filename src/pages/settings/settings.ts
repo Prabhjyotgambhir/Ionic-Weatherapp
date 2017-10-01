@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/Storage';
-
+import { HomePage	} from '../home/home';
 
 @IonicPage()
 @Component({
@@ -11,6 +11,7 @@ import { Storage } from '@ionic/Storage';
 export class SettingsPage {
 	city: String;
 	state: String;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage) {
   this.storage.get('location').then((val)=>{
   	if(val!=null) {
@@ -19,14 +20,22 @@ export class SettingsPage {
   		this.state = location.state;
   	} else {
   		this.city = 'Miami';
-  	this.state = 'FL'
-  	
+  		this.state = 'FL';
   	}
-  })
+  });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
   }
 
+  save() {
+  	 let location = {
+  		city : this.city,
+  		state: this.state
+  	}
+
+  	this.storage.set('location',JSON.stringify(location));
+  	this.navCtrl.push(HomePage);
+  }
 }
